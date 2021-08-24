@@ -20,3 +20,64 @@
 .btn-primary:hover, .btn-primary:visited {
     background-color: #3c5aa6 !important;
 }
+
+/* COLORS FOR BACKGROUND IN ELEMENTS, DEPENDS ON TYPE OF POKEMON */
+.electric {
+    background-color: #F7D02C;
+}
+
+.fire {
+    background-color: #EE8130;
+}
+
+.grass {
+    background-color: #7AC74C;
+}
+
+.water {
+    background-color: #6390F0;
+}
+
+.bug {
+    background-color: #A6B91A;
+}
+
+.dragon {
+    background-color: #6F35FC;
+}
+
+.fighting {
+    background-color: #C22E28;
+}
+
+.flying {
+    background-color: #A98FF3;
+}
+
+.ghost {
+    background-color: #735797;
+}
+
+.ground {
+    background-color: #E2BF65;
+}
+
+.ice {
+    background-color: #96D9D6;
+}
+
+.normal {
+    background-color: #A8A77A;
+}
+
+.poison {
+    background-color: #A33EA1;
+}
+
+.psychic {
+    background-color: #F95587;
+}
+
+.rock {
+ background-color: #B6A136;
+}
