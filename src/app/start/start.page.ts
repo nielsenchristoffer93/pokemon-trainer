@@ -8,10 +8,10 @@ import { setStorage, getStorage } from "src/storage";
     styleUrls: ["./start.page.css"]
 })
 export class StartPageComponent {
-    public trainerName: string = "";
+    //private trainerName: string = "";
 
-    public onLoginButtonClick(): void {
-        setStorage("trainer-name", this.trainerName);
+    public onLoginButtonClick(trainerName:string): void {
+        setStorage("trainer-name", trainerName);
     }
 
 }

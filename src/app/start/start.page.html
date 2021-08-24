@@ -16,7 +16,7 @@
             placeholder="What's your trainer name?"
             aria-label="Username"
             aria-describedby="basic-addon1"
-            [(ngModel)]="trainerName"
+            #trainerName
           />
         </div>
       </div>
@@ -26,7 +26,7 @@
             class="btn btn-primary"
             type="button"
             routerLink="/trainer"
-            (click)="onLoginButtonClick()"
+            (click)="onLoginButtonClick(trainerName.value)"
           >
             Login
           </button>
