@@ -8,13 +8,15 @@ import { StartPageComponent } from './start/start.page';
 import { TrainerPageComponent } from './trainer/trainer.page';
 
 import { AppRoutingModule } from 'src/app-routing.module';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartPageComponent,
     TrainerPageComponent,
-    CataloguePageComponent
+    CataloguePageComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

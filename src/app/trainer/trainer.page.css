@@ -1,0 +1,21 @@
+.custom-card {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+.custom-card-body {
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.pokemon-image {
+    width: 100%;
+}
+
+.pokemon-image img{
+    width: 80%;
+}

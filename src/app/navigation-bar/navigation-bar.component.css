@@ -1,0 +1,55 @@
+.navigation-bar {
+    padding: 2vh 0;
+    background-color: #ffcb05;
+    text-transform: uppercase;
+    margin-bottom: 4vh;
+}
+
+.navigation-bar a {
+    text-decoration: none;
+}
+
+.pokemon-font {
+    font-family: Pokemon-Solid;
+    font-size: 120%;
+    letter-spacing: 4px; 
+    color: #ffcb05;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #2a75bb;
+    transition: color 0.3s;
+}
+
+a.pokemon-font {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.pokemon-font:hover {
+    color: #2a75bb;
+}
+
+/*
+a.pokemon-font::after {
+    content: '';
+    display: block;
+    margin-top: 5px;
+    width: 0;
+    height: 2px;
+    background: #2a75bb;
+    transition: width .3s;
+}
+
+a.pokemon-font:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+*/
+
+.navbar-right {
+    display: inline;
+    float: right;
+}
+
+.trainer-link {
+    margin-right: 5vw;
+}

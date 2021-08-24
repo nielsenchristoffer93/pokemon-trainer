@@ -4,13 +4,7 @@
     src: url("assets/fonts/pokemon-solid.ttf");
 }
 
-.pokemon-font {
-    font-family: Pokemon-Solid;
-    letter-spacing: 4px; 
-    color: #ffcb05;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #2a75bb;
-}
+
 
 .btn-primary, .btn-primary:active, .btn-primary:link {
     background-color: #2a75bb !important;

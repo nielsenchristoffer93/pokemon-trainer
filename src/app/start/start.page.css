@@ -6,3 +6,11 @@ h1 {
     text-align: center;
     margin-bottom: 4vh;
 }
+
+.pokemon-font {
+    font-family: Pokemon-Solid;
+    letter-spacing: 4px; 
+    color: #ffcb05;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #2a75bb;
+}
