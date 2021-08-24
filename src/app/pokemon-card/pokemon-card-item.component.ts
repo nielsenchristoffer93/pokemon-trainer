@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { Types } from "../models/pokemon-details.model";
+import { PokemonDetails, Types } from "../models/pokemon-details.model";
+import { setStorage } from "src/storage";
 
 @Component({
     selector: "app-pokemon-card-item",
@@ -7,6 +8,11 @@ import { Types } from "../models/pokemon-details.model";
     styleUrls: ["./pokemon-card-item.component.css"]
 })
 export class PokemonCardItemComponent {
+
+    hasBeenCaught:boolean = false;
+
+    @Input()
+    pokemon: PokemonDetails | null = null;
 
     @Input("pokemon_id")
     pokemonId: number = 0;
@@ -74,6 +80,16 @@ export class PokemonCardItemComponent {
             default:
                 return "#fff"
         }
+    }
+
+    public catchPokemon():void {
+        if (!this.hasBeenCaught) {
+            this.hasBeenCaught = true;
+        } else {
+            this.hasBeenCaught = false;
+        }
+
+        setStorage("caught-pokemons", JSON.stringify(this.pokemon));
     }
 
 }

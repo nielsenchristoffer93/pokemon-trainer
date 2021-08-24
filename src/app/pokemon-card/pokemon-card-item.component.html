@@ -1,5 +1,5 @@
-<div class="custom-card" [ngStyle]="{'background-color': checkBackgroundColor(pokemonTypes[0].type.name)}">
-    <div class="pokeball-container">
+<div class="custom-card" [ngStyle]="{'background-color': checkBackgroundColor(pokemonTypes[0].type.name)}" (click)="catchPokemon()">
+    <div class="pokeball-container" *ngIf="hasBeenCaught">
         <img class="pokeball-img" src="assets/images/poke-ball.png" alt="poke-ball.png">
     </div>
     <div class="row justify-content-center pokemon-id">

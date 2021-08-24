@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-3 margin-bottom" *ngFor="let pokemon of pokemons">
       <app-pokemon-card-item
+        [pokemon]="pokemon"
         [pokemon_id]="pokemon.id"
         [pokemon_name]="pokemon.name"
         [pokemon_height]="pokemon.height"
