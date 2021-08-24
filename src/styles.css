@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Pokemon-Solid;
+    src: url("assets/fonts/pokemon-solid.ttf");
+}
+
+.pokemon-font {
+    font-family: Pokemon-Solid;
+    letter-spacing: 4px;
+}
