@@ -5,7 +5,7 @@
  * @returns false if the localStorage doesn't have the key supplied. If key exists, it returns the value as JSON data.
  */
  export const getStorage = (key: string) => {
-    const data = sessionStorage.getItem(key);
+    const data = localStorage.getItem(key);
 
     if (data) {
         return JSON.parse(data);
@@ -22,5 +22,5 @@
  */
 export const setStorage = (key: string, value: string) => {
     const jsonData = JSON.stringify(value);
-    sessionStorage.setItem(key, jsonData);
+    localStorage.setItem(key, jsonData);
 };

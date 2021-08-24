@@ -1,24 +1,38 @@
 <div class="container">
-    <div class="row start-page-row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <div class="row">
-                <img src="assets/images/pokemon-logo.png" alt="pokemon-logo.png">
-            </div>
-            <div class="row">
-                <h1 class="pokemon-font">Trainer</h1>
-            </div>
-            <div class="row">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="What's your trainer name?" aria-label="Username" aria-describedby="basic-addon1">
-                  </div>
-            </div>
-            <div class="row">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Login</button>
-                  </div>
-            </div>
+  <div class="row start-page-row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="row">
+        <img src="assets/images/pokemon-logo.png" alt="pokemon-logo.png" />
+      </div>
+      <div class="row">
+        <h1 class="pokemon-font">Trainer</h1>
+      </div>
+      <div class="row">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="What's your trainer name?"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            [(ngModel)]="trainerName"
+          />
         </div>
-        <div class="col-4"></div>
+      </div>
+      <div class="row">
+        <div class="d-grid gap-2">
+          <button
+            class="btn btn-primary"
+            type="button"
+            routerLink="/trainer"
+            (click)="onLoginButtonClick()"
+          >
+            Login
+          </button>
+        </div>
+      </div>
     </div>
+    <div class="col-4"></div>
+  </div>
 </div>

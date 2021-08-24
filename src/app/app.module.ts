@@ -9,6 +9,8 @@ import { TrainerPageComponent } from './trainer/trainer.page';
 
 import { AppRoutingModule } from 'src/app-routing.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { PokemonCardItemComponent } from './pokemon-card/pokemon-card-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     StartPageComponent,
     TrainerPageComponent,
     CataloguePageComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    PokemonCardItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
