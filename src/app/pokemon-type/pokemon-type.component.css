@@ -1,0 +1,18 @@
+.type {
+    border-radius: 50px;
+    margin-bottom: 10px;
+    padding: 4px;
+}
+
+.type i,
+.type p {
+    display: inline;
+}
+
+.type i {
+    margin-right: 5px;
+}
+
+.type:nth-child(2) {
+    margin-left: 10px;
+}

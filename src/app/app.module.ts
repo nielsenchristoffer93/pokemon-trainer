@@ -11,6 +11,7 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PokemonCardItemComponent } from './pokemon-card/pokemon-card-item.component';
 import { FormsModule } from '@angular/forms';
+import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     TrainerPageComponent,
     CataloguePageComponent,
     NavigationBarComponent,
-    PokemonCardItemComponent
+    PokemonCardItemComponent,
+    PokemonTypeComponent
   ],
   imports: [
     BrowserModule,

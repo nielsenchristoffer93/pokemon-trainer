@@ -12,26 +12,45 @@
     padding: 10px;
 }
 
+.pokemon-id {
+    margin-top: 2vh;
+}
+
 .pokemon-image {
     position: relative;
     width: 100%;
-    height: 16vh;
+    /*height: 25vh;*/
     text-align: center;
 }
 
 .pokemon-image img {
-    position: absolute;
+    /*position: absolute;*/
     width: 80%;
-    left: 50%;
+    padding-bottom: 10px;
+    /*left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
 }
 
-.type {
+.type-container {
+    flex-wrap: nowrap;
+}
+
+.pokeball-container {
+    position: relative;
+}
+
+.pokeball-img {
+    position: absolute;
+    width: 30px;
+    height: auto;
+    top: 1.7vh;
+    right: 1vw;
+}
+/*.type {
     border-radius: 50px;
     margin-bottom: 10px;
-    padding: 2px 12px;
-    margin-right: 10px;
+    padding: 4px;
 }
 
 .type i,
@@ -42,3 +61,7 @@
 .type i {
     margin-right: 5px;
 }
+
+.type:nth-child(2) {
+    margin-left: 10px;
+}*/
