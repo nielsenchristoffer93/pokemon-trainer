@@ -19,4 +19,7 @@ export class NavigationBarComponent implements OnInit{
         return getStorage("trainer-name");
     }*/
 
+    public onLogoutLinkClick():void {
+        localStorage.clear();
+    }
 }

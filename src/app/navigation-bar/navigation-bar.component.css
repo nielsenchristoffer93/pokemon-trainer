@@ -51,5 +51,9 @@ a.pokemon-font:hover::after {
 }
 
 .trainer-link {
-    margin-right: 5vw;
+    margin-right: 2vw;
+}
+
+.trainer-link-logout {
+    margin-right: 2vw;
 }

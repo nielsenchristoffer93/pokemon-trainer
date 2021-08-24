@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { setStorage, getStorage } from "src/storage";
 
@@ -7,8 +8,16 @@ import { setStorage, getStorage } from "src/storage";
     templateUrl: "./start.page.html",
     styleUrls: ["./start.page.css"]
 })
-export class StartPageComponent {
+export class StartPageComponent implements OnInit{
     //private trainerName: string = "";
+
+    constructor(private router:Router) { }
+
+    public ngOnInit():void {
+        if (getStorage("trainer-name")) {
+            this.router.navigate(['/pokemon-catalogue']);
+        }
+    }
 
     public onLoginButtonClick(trainerName:string): void {
         setStorage("trainer-name", trainerName);
