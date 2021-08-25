@@ -1,25 +1,15 @@
-<main>
-    <app-navigation-bar></app-navigation-bar>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-            <div class="col-2">
-                <app-pokemon-card-item></app-pokemon-card-item>
-            </div>
-        </div>
+<app-navigation-bar></app-navigation-bar>
+<div class="container">
+  <div class="row">
+    <div class="col-3 margin-bottom" *ngFor="let pokemon of caughtPokemons">
+      <app-pokemon-card-item
+        [pokemon]="pokemon"
+        [pokemon_id]="pokemon.id"
+        [pokemon_name]="pokemon.name"
+        [pokemon_height]="pokemon.height"
+        [pokemon_weight]="pokemon.weight"
+        [pokemon_types]="pokemon.types"
+      ></app-pokemon-card-item>
     </div>
-</main>
+  </div>
+</div>

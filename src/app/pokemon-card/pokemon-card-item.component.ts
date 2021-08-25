@@ -1,15 +1,27 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { PokemonDetails, Types } from "../models/pokemon-details.model";
-import { setStorage } from "src/storage";
+import { getStorage, setStorage } from "src/storage";
+import { PokemonService } from "../services/pokemons.service";
 
 @Component({
     selector: "app-pokemon-card-item",
     templateUrl: "./pokemon-card-item.component.html",
     styleUrls: ["./pokemon-card-item.component.css"]
 })
-export class PokemonCardItemComponent {
+export class PokemonCardItemComponent implements OnInit {
 
-    hasBeenCaught:boolean = false;
+    constructor(private readonly pokemonService: PokemonService) { }
+
+    //private _caughtPokemons: string[] = []
+    hasBeenCaught: boolean = false;
+
+    public ngOnInit(): void {
+        this.hasBeenCaught = this.pokemonService.checkIfPokemonIsCaught(this.pokemonName);
+        //console.log(this.pokemonName + " this.hasBeenCaught: " + this.hasBeenCaught);
+        //this.hasBeenCaught = this.pokemonService.checkIfPokemonIsAlreadyCaught(this.pokemonName);      
+    }
+
+    //@Output() clicked: EventEmitter<string> = new EventEmitter();
 
     @Input()
     pokemon: PokemonDetails | null = null;
@@ -43,7 +55,7 @@ export class PokemonCardItemComponent {
         }
     }
 
-    public checkBackgroundColor(type: string) {
+    /*public checkBackgroundColor(type: string) {
         switch (type) {
             case "grass":
                 return "#7AC74C";
@@ -80,16 +92,34 @@ export class PokemonCardItemComponent {
             default:
                 return "#fff"
         }
-    }
+    }*/
 
-    public catchPokemon():void {
+    public catchPokemon(): void {
         if (!this.hasBeenCaught) {
             this.hasBeenCaught = true;
         } else {
             this.hasBeenCaught = false;
         }
 
-        setStorage("caught-pokemons", JSON.stringify(this.pokemon));
+        //this.clicked.emit(this.pokemonName);
+        this.pokemonService.addToCaughtPokemons(this.pokemonName);
+        //console.log("isPokemonAlreadyCaught: " + this.isPokemonAlreadyCaught);
+        //console.log("checkIfPokemonIsCaught: " + this.checkIfPokemonIsCaught());
     }
+
+    /*public checkIfPokemonIsCaught() {
+        let pokemons = JSON.parse(getStorage("caught-pokemons"));
+        for (let index = 0; index < pokemons.length; index++) {
+            console.log("pokemons[index]:" + pokemons[index] + " this.pokemonName: " + this.pokemonName);
+            if (pokemons[index] === this.pokemonName) {
+                this.hasBeenCaught = true;
+            }
+        }
+        this.hasBeenCaught = false;
+    }*/
+
+    /*get isPokemonAlreadyCaught() {
+        return this.pokemonService.checkIfPokemonIsAlreadyCaught(this.pokemonName);
+    }*/
 
 }

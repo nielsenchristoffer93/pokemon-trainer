@@ -11,13 +11,13 @@ export class PokemonTypeComponent{
   @Input("pokemon_type_string")
   pokemonTypeString: string = "";
 
-  @Input("background_color")
-  backgroundColor: string = "";
+  /*@Input("background_color")
+  backgroundColor: string = "";*/
 
   public changeIcon(type: string) {
     switch (type.toLowerCase()) {
         case "grass":
-            return "fab fa-pagelines";
+            return "fas fa-leaf";
         case "fire":
             return "fas fa-fire-alt";
         case "electric":

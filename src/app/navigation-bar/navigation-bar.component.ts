@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { getStorage } from "src/storage";
+import { PokemonService } from "../services/pokemons.service";
 
 @Component({
     selector: "app-navigation-bar",
@@ -7,6 +8,8 @@ import { getStorage } from "src/storage";
     styleUrls: ["./navigation-bar.component.css"]
 })
 export class NavigationBarComponent implements OnInit{
+
+    constructor(private readonly pokemonService: PokemonService) {}
 
     @Input()
     trainerName:string = "";
@@ -21,5 +24,6 @@ export class NavigationBarComponent implements OnInit{
 
     public onLogoutLinkClick():void {
         localStorage.clear();
+        this.pokemonService.clearStates();
     }
 }

@@ -1,4 +1,5 @@
-<div class="type" [ngStyle]="{'background-color': backgroundColor}">
+<!-- [ngStyle]="{'background-color': backgroundColor}" -->
+<div class="type {{pokemonTypeString.toLowerCase()}}">
   <i class={{changeIcon(pokemonTypeString)}}></i>
   <p>{{pokemonTypeString}}</p>
 </div>
