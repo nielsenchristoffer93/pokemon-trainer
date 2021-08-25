@@ -12,6 +12,7 @@ export class PokemonService {
     private _error: string = "";
     private _caughtPokemonNames: string[] = [];
     private _caughtPokemons: PokemonDetails[] = [];
+    private _hasLoadedPokemons:boolean = false;
 
     // DI, Dependency Injection
     constructor(private readonly http: HttpClient) {
@@ -23,7 +24,7 @@ export class PokemonService {
         //this._caughtPokemonNames = [];
 
         for (const name of JSON.parse(getStorage("caught-pokemons"))) {
-            console.log("pokemonName: " + name);
+            //console.log("pokemonName: " + name);
             pokemon = await this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`).toPromise()
             this._caughtPokemons.push(pokemon);
         }
@@ -36,13 +37,17 @@ export class PokemonService {
     public async fetchAllPokemons() {
         let pokemon: PokemonDetails;
 
-        if (this._pokemons) {
+        if (!this._hasLoadedPokemons) {
             for (let index = 1; index < 152; index++) {
                 pokemon = await this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${index}`).toPromise()
                 this._pokemons.push(pokemon);
             }
-            console.log("Fetching all pokemons.");
         }
+
+        //console.log(this._hasLoadedPokemons);
+        this._hasLoadedPokemons = true;
+        //console.log(this._pokemons);
+        
     }
 
     public pokemons(): PokemonDetails[] {
@@ -62,7 +67,7 @@ export class PokemonService {
     }
 
     addToCaughtPokemons(pokemonName: string) {
-        console.log(this._caughtPokemonNames);
+        //console.log(this._caughtPokemonNames);
         if (!this._caughtPokemonNames.includes(pokemonName)) {
             this._caughtPokemonNames.push(pokemonName);
         } else if(this._caughtPokemonNames.includes(pokemonName)) {
@@ -95,5 +100,6 @@ export class PokemonService {
         this._caughtPokemonNames = [];
         this._caughtPokemons = [];
         this._pokemons = [];
+        this._hasLoadedPokemons = false;
     }
 }
