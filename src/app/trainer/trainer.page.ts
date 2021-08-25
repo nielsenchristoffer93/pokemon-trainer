@@ -13,9 +13,9 @@ export class TrainerPageComponent {
 
     pokemons: PokemonDetails[] = [];
 
-    constructor(private router:Router, private readonly pokemonService:PokemonService) { }
-    
-    public ngOnInit():void {
+    constructor(private router: Router, private readonly pokemonService: PokemonService) { }
+
+    public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
             this.router.navigate(['/']);
         }

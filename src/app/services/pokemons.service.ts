@@ -12,27 +12,20 @@ export class PokemonService {
     private _error: string = "";
     private _caughtPokemonNames: string[] = [];
     private _caughtPokemons: PokemonDetails[] = [];
-    private _hasLoadedPokemons:boolean = false;
+    private _hasLoadedPokemons: boolean = false;
 
-    // DI, Dependency Injection
     constructor(private readonly http: HttpClient) {
     }
 
     public async fetchCaughtPokemons() {
         let pokemon: PokemonDetails;
         this._caughtPokemons = [];
-        //this._caughtPokemonNames = [];
 
         for (const name of JSON.parse(getStorage("caught-pokemons"))) {
-            //console.log("pokemonName: " + name);
             pokemon = await this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`).toPromise()
             this._caughtPokemons.push(pokemon);
         }
-
-        //setStorage("caught-pokemons", JSON.stringify(this._caughtPokemonNames));
-        //console.log("_caughtPokemons:" + this._caughtPokemons);
     }
-
 
     public async fetchAllPokemons() {
         let pokemon: PokemonDetails;
@@ -44,10 +37,7 @@ export class PokemonService {
             }
         }
 
-        //console.log(this._hasLoadedPokemons);
         this._hasLoadedPokemons = true;
-        //console.log(this._pokemons);
-        
     }
 
     public pokemons(): PokemonDetails[] {
@@ -67,23 +57,17 @@ export class PokemonService {
     }
 
     addToCaughtPokemons(pokemonName: string) {
-        //console.log(this._caughtPokemonNames);
         if (!this._caughtPokemonNames.includes(pokemonName)) {
             this._caughtPokemonNames.push(pokemonName);
-        } else if(this._caughtPokemonNames.includes(pokemonName)) {
+        } else if (this._caughtPokemonNames.includes(pokemonName)) {
             for (let index = 0; index < this._caughtPokemonNames.length; index++) {
                 if (this._caughtPokemonNames[index] === pokemonName) {
                     this._caughtPokemonNames.splice(index, 1);
                 }
             }
         }
-        //console.log(this._caughtPokemonNames);
         setStorage("caught-pokemons", JSON.stringify(this._caughtPokemonNames));
     }
-
-    /*public checkIfPokemonIsAlreadyCaught(pokemonName: string): boolean{
-        return this._caughtPokemonNames.includes(pokemonName) ? true : false;
-    }*/
 
     public checkIfPokemonIsCaught(pokemonName: string): boolean {
         let pokemons = JSON.parse(getStorage("caught-pokemons"));
@@ -91,7 +75,7 @@ export class PokemonService {
         for (let index = 0; index < pokemons.length; index++) {
             if (pokemons[index] === pokemonName) {
                 return true;
-            }            
+            }
         }
         return false;
     }

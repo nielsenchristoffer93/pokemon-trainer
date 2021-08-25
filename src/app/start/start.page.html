@@ -8,25 +8,27 @@
       <div class="row">
         <h1 class="pokemon-font">Trainer</h1>
       </div>
-      <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm, trainerName.value)">
+      <form
+        #createForm="ngForm"
+        (ngSubmit)="onSubmit(createForm, trainerName.value)"
+      >
         <div class="row">
           <div class="input-group mb-3">
             <input
-            [ngClass]="{'is-valid': trainerName.valid, 'is-invalid': (trainerName.invalid && (trainerName.dirty || trainerName.touched))}"
+              [ngClass]="{'is-valid': trainerName.valid, 'is-invalid': (trainerName.invalid && (trainerName.dirty || trainerName.touched))}"
               type="text"
               class="form-control"
               placeholder="What's your trainer name?"
               minlength="2"
               required
               name="trainerName"
-              ngModel #trainerName="ngModel"
+              ngModel
+              #trainerName="ngModel"
             />
           </div>
         </div>
         <div class="row">
           <div class="d-grid gap-2">
-            <!--(click)="onLoginButtonClick(trainerName.value)"-->
-            <!--routerLink="/pokemon-catalogue"-->
             <button
               class="btn btn-primary"
               type="submit"

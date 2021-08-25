@@ -2,9 +2,16 @@
   <div class="container">
     <a routerLink="/">Pokemon Trainer</a>
     <div class="navbar-right">
-        <a class="trainer-link" routerLink="/trainer">Trainer: {{ trainerName }}</a>
-        <a class="trainer-link-logout" routerLink="/" (click)="onLogoutLinkClick()"><i class="fas fa-sign-out-alt"></i></a>
-        <a routerLink="/pokemon-catalogue">Pokemon Catalogue</a>
+      <a class="trainer-link" routerLink="/trainer"
+        >Trainer: {{ trainerName }}</a
+      >
+      <a
+        class="trainer-link-logout"
+        routerLink="/"
+        (click)="onLogoutLinkClick()"
+        ><i class="fas fa-sign-out-alt"></i
+      ></a>
+      <a routerLink="/pokemon-catalogue">Pokemon Catalogue</a>
     </div>
   </div>
 </nav>

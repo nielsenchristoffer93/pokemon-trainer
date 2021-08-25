@@ -7,22 +7,17 @@ import { PokemonService } from "../services/pokemons.service";
     templateUrl: "./navigation-bar.component.html",
     styleUrls: ["./navigation-bar.component.css"]
 })
-export class NavigationBarComponent implements OnInit{
+export class NavigationBarComponent implements OnInit {
 
-    constructor(private readonly pokemonService: PokemonService) {}
+    constructor(private readonly pokemonService: PokemonService) { }
 
     @Input()
-    trainerName:string = "";
+    trainerName: string = "";
 
     ngOnInit(): void {
         this.trainerName = getStorage("trainer-name");
     }
-
-    /*public getTrainerName(): string {
-        return getStorage("trainer-name");
-    }*/
-
-    public onLogoutLinkClick():void {
+    public onLogoutLinkClick(): void {
         localStorage.clear();
         this.pokemonService.clearStates();
     }

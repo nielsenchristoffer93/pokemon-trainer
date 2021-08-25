@@ -1,37 +1,49 @@
-<!--[ngStyle]="{'background-color': checkBackgroundColor(pokemonTypes[0].type.name)}"-->
-<div class="custom-card {{pokemon!.types[0].type.name}}"  (click)="catchPokemon()">
-    <div class="pokeball-container" *ngIf="hasBeenCaught">
-        <img class="pokeball-img" src="assets/images/poke-ball.png" alt="poke-ball.png">
+<div
+  class="custom-card {{ pokemon!.types[0].type.name }}"
+  (click)="catchPokemon()"
+>
+  <div class="pokeball-container" *ngIf="hasBeenCaught">
+    <img
+      class="pokeball-img"
+      src="assets/images/poke-ball.png"
+      alt="poke-ball.png"
+    />
+  </div>
+  <div class="row justify-content-center pokemon-id">
+    <h5>{{ convertPokemonId(pokemon!.id) }}</h5>
+  </div>
+  <div class="pokemon-image">
+    <img
+      src="assets/sprites/{{ pokemon!.id }}.png"
+      alt="{{ pokemon!.id }}.png"
+    />
+  </div>
+  <div class="custom-card-body">
+    <div class="row">
+      <h3>{{ capitalizeFirstLetter(pokemon!.name) }}</h3>
     </div>
-    <div class="row justify-content-center pokemon-id">
-        <h5>{{convertPokemonId(pokemon!.id)}}</h5>
+    <div class="row justify-content-center">
+      <app-pokemon-type
+        class="col-5"
+        *ngFor="let type of pokemon!.types"
+        [pokemon_type_string]="capitalizeFirstLetter(type.type.name)"
+      ></app-pokemon-type>
     </div>
-    <div class="pokemon-image">
-        <img src="assets/sprites/{{pokemon!.id}}.png" alt="{{pokemon!.id}}.png">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <p>Height:</p>
+      </div>
+      <div class="col-4">
+        <p>{{ pokemon!.height / 10 }} m</p>
+      </div>
     </div>
-    <div class="custom-card-body">
-        <div class="row">
-            <h3>{{capitalizeFirstLetter(pokemon!.name)}}</h3>
-        </div>
-        <div class="row justify-content-center">
-            <!--[background_color]="checkBackgroundColor(type.type.name)-->
-            <app-pokemon-type class="col-5" *ngFor="let type of pokemon!.types" [pokemon_type_string]="capitalizeFirstLetter(type.type.name)"></app-pokemon-type>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <p>Height:</p>
-            </div>
-            <div class="col-4">
-                <p>{{pokemon!.height / 10}} m</p>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <p>Weight:</p>
-            </div>
-            <div class="col-4">
-                <p>{{pokemon!.weight / 10}} kg</p>
-            </div>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <p>Weight:</p>
+      </div>
+      <div class="col-4">
+        <p>{{ pokemon!.weight / 10 }} kg</p>
+      </div>
     </div>
+  </div>
 </div>

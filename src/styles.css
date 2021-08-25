@@ -1,81 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: Pokemon-Solid;
-    src: url("assets/fonts/pokemon-solid.ttf");
+  font-family: Pokemon-Solid;
+  src: url("assets/fonts/pokemon-solid.ttf");
 }
 
-
-
-.btn-primary, .btn-primary:active, .btn-primary:link {
-    background-color: #2a75bb !important;
-    border-color: #2a75bb !important;
+.btn-primary,
+.btn-primary:active,
+.btn-primary:link {
+  background-color: #2a75bb !important;
+  border-color: #2a75bb !important;
 }
 
-.btn-primary:hover, .btn-primary:visited {
-    background-color: #3c5aa6 !important;
+.btn-primary:hover,
+.btn-primary:visited {
+  background-color: #3c5aa6 !important;
 }
 
 /* COLORS FOR BACKGROUND IN ELEMENTS, DEPENDS ON TYPE OF POKEMON */
+
 .electric {
-    background-color: #F7D02C;
+  background-color: #f7d02c;
 }
 
 .fire {
-    background-color: #EE8130;
+  background-color: #ee8130;
 }
 
 .grass {
-    background-color: #7AC74C;
+  background-color: #7ac74c;
 }
 
 .water {
-    background-color: #6390F0;
+  background-color: #6390f0;
 }
 
 .bug {
-    background-color: #A6B91A;
+  background-color: #a6b91a;
 }
 
 .dragon {
-    background-color: #6F35FC;
+  background-color: #6f35fc;
 }
 
 .fighting {
-    background-color: #C22E28;
+  background-color: #c22e28;
 }
 
 .flying {
-    background-color: #A98FF3;
+  background-color: #a98ff3;
 }
 
 .ghost {
-    background-color: #735797;
+  background-color: #735797;
 }
 
 .ground {
-    background-color: #E2BF65;
+  background-color: #e2bf65;
 }
 
 .ice {
-    background-color: #96D9D6;
+  background-color: #96d9d6;
 }
 
 .normal {
-    background-color: #A8A77A;
+  background-color: #a8a77a;
 }
 
 .poison {
-    background-color: #A33EA1;
+  background-color: #a33ea1;
 }
 
 .psychic {
-    background-color: #F95587;
+  background-color: #f95587;
 }
 
 .rock {
- background-color: #B6A136;
+  background-color: #b6a136;
 }
 
 .fairy {
-    background-color: #D685AD;
+  background-color: #d685ad;
 }

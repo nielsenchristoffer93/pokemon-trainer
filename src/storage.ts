@@ -4,7 +4,7 @@
  * @param {*} key The name of the key to get value from.
  * @returns false if the localStorage doesn't have the key supplied. If key exists, it returns the value as JSON data.
  */
- export const getStorage = (key: string) => {
+export const getStorage = (key: string) => {
     const data = localStorage.getItem(key);
 
     if (data) {

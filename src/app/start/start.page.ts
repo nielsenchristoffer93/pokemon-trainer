@@ -9,23 +9,21 @@ import { setStorage, getStorage } from "src/storage";
     templateUrl: "./start.page.html",
     styleUrls: ["./start.page.css"]
 })
-export class StartPageComponent implements OnInit{
-    //private trainerName: string = "";
+export class StartPageComponent implements OnInit {
 
-    constructor(private router:Router) { }
+    constructor(private router: Router) { }
 
-    public ngOnInit():void {
+    public ngOnInit(): void {
         if (getStorage("trainer-name")) {
             this.router.navigate(['/pokemon-catalogue']);
         }
     }
 
-    public onLoginButtonClick(trainerName:string): void {
+    public onLoginButtonClick(trainerName: string): void {
         setStorage("trainer-name", trainerName);
     }
 
-    public onSubmit(createForm: NgForm, trainerName:string):void {
-        //console.log(createForm.valid);
+    public onSubmit(createForm: NgForm, trainerName: string): void {
         setStorage("trainer-name", trainerName);
         this.router.navigate(['/pokemon-catalogue']);
     }
