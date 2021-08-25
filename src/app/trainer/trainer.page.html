@@ -1,15 +1,15 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
   <div class="row">
-    <div class="col-3 margin-bottom" *ngFor="let pokemon of caughtPokemons">
-      <app-pokemon-card-item
-        [pokemon]="pokemon"
-        [pokemon_id]="pokemon.id"
+    <!--
+      [pokemon_id]="pokemon.id"
         [pokemon_name]="pokemon.name"
         [pokemon_height]="pokemon.height"
         [pokemon_weight]="pokemon.weight"
         [pokemon_types]="pokemon.types"
-      ></app-pokemon-card-item>
+    -->
+    <div class="col-3 margin-bottom" *ngFor="let pokemon of caughtPokemons">
+      <app-pokemon-card-item [pokemon]="pokemon"></app-pokemon-card-item>
     </div>
   </div>
 </div>

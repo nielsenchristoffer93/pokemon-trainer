@@ -16,7 +16,7 @@ export class PokemonCardItemComponent implements OnInit {
     hasBeenCaught: boolean = false;
 
     public ngOnInit(): void {
-        this.hasBeenCaught = this.pokemonService.checkIfPokemonIsCaught(this.pokemonName);
+        this.hasBeenCaught = this.pokemonService.checkIfPokemonIsCaught(this.pokemon!.name);
         //console.log(this.pokemonName + " this.hasBeenCaught: " + this.hasBeenCaught);
         //this.hasBeenCaught = this.pokemonService.checkIfPokemonIsAlreadyCaught(this.pokemonName);      
     }
@@ -26,6 +26,7 @@ export class PokemonCardItemComponent implements OnInit {
     @Input()
     pokemon: PokemonDetails | null = null;
 
+    /*
     @Input("pokemon_id")
     pokemonId: number = 0;
 
@@ -40,6 +41,7 @@ export class PokemonCardItemComponent implements OnInit {
 
     @Input("pokemon_types")
     pokemonTypes: Types[] = []
+    */
 
     public capitalizeFirstLetter(name: string) {
         return name.charAt(0).toUpperCase() + name.slice(1);
@@ -102,7 +104,7 @@ export class PokemonCardItemComponent implements OnInit {
         }
 
         //this.clicked.emit(this.pokemonName);
-        this.pokemonService.addToCaughtPokemons(this.pokemonName);
+        this.pokemonService.addToCaughtPokemons(this.pokemon!.name);
         //console.log("isPokemonAlreadyCaught: " + this.isPokemonAlreadyCaught);
         //console.log("checkIfPokemonIsCaught: " + this.checkIfPokemonIsCaught());
     }
