@@ -41,8 +41,8 @@ export class PokemonCardItemComponent implements OnInit {
     @Input("pokemon_types")
     pokemonTypes: Types[] = []
 
-    public capitalizeFirstLetter(string: string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+    public capitalizeFirstLetter(name: string) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
     public convertPokemonId(id: number) {

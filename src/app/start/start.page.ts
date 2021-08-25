@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { setStorage, getStorage } from "src/storage";
@@ -20,6 +21,11 @@ export class StartPageComponent implements OnInit{
     }
 
     public onLoginButtonClick(trainerName:string): void {
+        setStorage("trainer-name", trainerName);
+    }
+
+    public onSubmit(createForm: NgForm, trainerName:string):void {
+        console.log(createForm.valid);
         setStorage("trainer-name", trainerName);
     }
 
