@@ -18,27 +18,6 @@
     color: #2a75bb;
 }
 
-.pokemon-font {
-  font-family: Pokemon-Solid;
-  font-size: 120%;
-  letter-spacing: 4px;
-  color: #ffcb05;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #2a75bb;
-  transition: all 0.3s;
-}
-
-a.pokemon-font {
-  display: inline-block;
-  text-decoration: none;
-}
-
-a.pokemon-font:hover {
-  color: #2a75bb;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #ffcb05;
-}
-
 .navbar-text {
   font-weight: 700;
 }
