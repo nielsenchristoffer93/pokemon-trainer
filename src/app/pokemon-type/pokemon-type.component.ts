@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Type } from '../models/pokemon-details.model';
 
 @Component({
     selector: 'app-pokemon-type',

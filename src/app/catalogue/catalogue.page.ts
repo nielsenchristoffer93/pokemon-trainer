@@ -12,7 +12,7 @@ import { PokemonService } from "../services/pokemons.service";
 })
 export class CataloguePageComponent implements OnInit {
 
-    constructor(private router: Router, private http: HttpClient, private readonly pokemonService: PokemonService) { }
+    constructor(private router: Router, private readonly pokemonService: PokemonService) { }
 
     public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
