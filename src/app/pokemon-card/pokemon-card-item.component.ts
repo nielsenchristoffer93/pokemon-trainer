@@ -14,28 +14,28 @@ export class PokemonCardItemComponent implements OnInit {
     hasBeenCaught: boolean = false;
 
     /**
-     * life cycle 
-     * sets hasBeenCaught true or false depending if pokemon is caught with checkIfPokemonIsCaught method
+     * Lifecycle hook. 
+     * Sets hasBeenCaught true or false depending if pokemon is caught with checkIfPokemonIsCaught method
      */
     public ngOnInit(): void {
         this.hasBeenCaught = this.pokemonService.checkIfPokemonIsCaught(this.pokemon!.name);
     }
 
-
+    // The pokemon to display data from.
     @Input()
     pokemon: PokemonDetails | null = null;
 
     /**
-     * method to capitalize first letter in the name 
-     * @param name name of the pokemon
-     * @returns the name with capitalized first letter
+     * Method to capitalize first letter in the name 
+     * @param name Name of the pokemon
+     * @returns The name with capitalized first letter
      */
     public capitalizeFirstLetter(name: string) {
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 
     /**
-     * method to format number system of the pokemon ID
+     * Method to format number system of the pokemon ID
      * @param id to format
      * @returns pokemon id with 3 number format
      */
@@ -50,7 +50,7 @@ export class PokemonCardItemComponent implements OnInit {
     }
 
     /**
-     * method to mark if a pokemon is caught or not 
+     * method to mark if a pokemon is caught or not, and adds the pokemon to array of caught pokemons in pokemon service. 
      */
     public catchPokemon(): void {
         if (!this.hasBeenCaught) {

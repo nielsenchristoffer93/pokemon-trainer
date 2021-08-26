@@ -7,13 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class PokemonTypeComponent {
 
+    // Pokemon type as a string.
     @Input("pokemon_type_string")
     pokemonTypeString: string = "";
 
     /**
-     * Method to change pokemon type icons
-     * @param type of the specific icon
-     * @returns type of icon (css code)
+     * Method to change pokemon type icons based on pokemon type.
+     * @param type String of the specific font-awesome icon.
+     * @returns Type of icon (css code)
      */
     public changeIcon(type: string) {
         switch (type.toLowerCase()) {
