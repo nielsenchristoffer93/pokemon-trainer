@@ -19,10 +19,6 @@ export class StartPageComponent implements OnInit {
         }
     }
 
-    public onLoginButtonClick(trainerName: string): void {
-        setStorage("trainer-name", trainerName);
-    }
-
     public onSubmit(createForm: NgForm, trainerName: string): void {
         setStorage("trainer-name", trainerName);
         this.router.navigate(['/pokemon-catalogue']);

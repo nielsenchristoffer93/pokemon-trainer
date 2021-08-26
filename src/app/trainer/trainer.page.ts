@@ -22,9 +22,6 @@ export class TrainerPageComponent {
 
         if (this.caughtPokemons) {
             this.pokemonService.fetchCaughtPokemons();
-            
-            //TEST
-            //this.pokemonService.fetchCaughtPokemons2();
         }
     }
 

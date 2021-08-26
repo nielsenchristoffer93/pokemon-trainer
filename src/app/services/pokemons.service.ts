@@ -8,9 +8,6 @@ import { PokemonDetails } from "../models/pokemon-details.model";
 })
 export class PokemonService {
 
-    //TEST
-    private _pokemon: PokemonDetails | null = null;
-
     private _pokemons: PokemonDetails[] = [];
     private _caughtPokemonNames: string[] = [];
     private _caughtPokemons: PokemonDetails[] = [];
@@ -30,45 +27,12 @@ export class PokemonService {
                     console.log(error);
                 })
 
-            //pokemon = this.fetchSpecificPokemon(name)
-
             // If we didn't fetch a pokemon from api it most likely failed and we should exit loop.
             if (pokemon) {
                 this._caughtPokemons.push(pokemon!);
             } else {
                 break;
             }
-        }
-    }
-
-    // TEst method
-    private async fetchSpecificPokemon(stringOrId: string) {
-        let pokemon: PokemonDetails;
-        await this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`)
-            .toPromise()
-            .then((data) => {
-                return pokemon = data;
-            })
-            .catch((error: HttpErrorResponse) => {
-                console.log(error);
-            })
-        return pokemon!;
-    }
-
-    // TEST METHOD
-    public fetchCaughtPokemons2() {
-        for (const name of JSON.parse(getStorage("caught-pokemons"))) {
-            this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`)
-                .subscribe(
-                    (pokemon) => {
-                        this._pokemon = pokemon;
-                        console.log(pokemon);
-                    },
-                    (error: HttpErrorResponse) => {
-                        console.log(error);
-                    }
-                )
-            this._caughtPokemons.push(this._pokemon!);
         }
     }
 
@@ -90,18 +54,13 @@ export class PokemonService {
                     break;
                 }
             }
+            this._hasLoadedPokemons = true;
         }
-
-        this._hasLoadedPokemons = true;
     }
 
     public pokemons(): PokemonDetails[] {
         return this._pokemons;
     }
-
-    /*public caughtPokemonNames(): string[] {
-        return this._caughtPokemonNames;
-    }*/
 
     public caughtPokemons(): PokemonDetails[] {
         return this._caughtPokemons;

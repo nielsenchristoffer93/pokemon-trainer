@@ -11,12 +11,12 @@ export class NavigationBarComponent implements OnInit {
 
     constructor(private readonly pokemonService: PokemonService) { }
 
-    @Input()
     trainerName: string = "";
 
     ngOnInit(): void {
         this.trainerName = getStorage("trainer-name");
     }
+    
     public onLogoutLinkClick(): void {
         localStorage.clear();
         this.pokemonService.clearStates();
