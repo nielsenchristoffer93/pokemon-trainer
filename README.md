@@ -1,6 +1,9 @@
 # Pokémon Trainer
 Pokémon Trainer web app using the Angular Framework.
 
+Link to heroku application:  
+https://pokemon-trainer-assignment.herokuapp.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
 ## Development server
