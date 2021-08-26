@@ -6,6 +6,23 @@ https://pokemon-trainer-assignment.herokuapp.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
+## Database API 
+
+DB API used is from https://pokeapi.co/api/v2/
+
+## Startup 🌟
+
+You will first be displayed with a start-page. On this page you will need to supply a name (minimum 2 characters).
+Otherwise you won't be able to reach the translation and profile page.
+
+## Catalogue page 📃
+
+After loggin in, user will be redirected to the Catalogue page where all pokemons are listed with their attribute details. User is able to add 1 or more pokemons to their trainer profile by clicking on the wanted pokemon card.
+
+## Trainer page 🙋‍♂️
+
+In the trainer page, all caught pokemons are listed, user is also able to remove a pokemon from their profile by clicking on the selected card
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -14,8 +14,8 @@ export class StartPageComponent implements OnInit {
     constructor(private router: Router) { }
 
     /**
-     * life cycle 
-     * checks if name exists in storage and routes page to catalogue 
+     * Lifecycle hook.
+     * Checks if trainername exists in storage and routes page to catalogue.
      */
     public ngOnInit(): void {
         if (getStorage("trainer-name")) {
@@ -24,9 +24,9 @@ export class StartPageComponent implements OnInit {
     }
 
     /**
-     * method to add name to storage and route user to catalogue
-     * @param createForm 
-     * @param trainerName name of the user
+     * Method to add trainer-name to storage and route user to catalogue.
+     * @param createForm Angular form containing data.
+     * @param trainerName Name of the trainer-name.
      */
     public onSubmit(createForm: NgForm, trainerName: string): void {
         setStorage("trainer-name", trainerName);

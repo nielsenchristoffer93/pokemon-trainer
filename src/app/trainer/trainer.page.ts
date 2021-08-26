@@ -11,13 +11,11 @@ import { PokemonService } from "../services/pokemons.service";
 })
 export class TrainerPageComponent {
 
-    pokemons: PokemonDetails[] = [];
-
     constructor(private router: Router, private readonly pokemonService: PokemonService) { }
 
     /**
-     * life cycle
-     * checks if name exists in storage and routes user to startpage if not and fetches all pokemons if it does
+     * Lifecycle hook.
+     * Checks if name exists in storage and routes user to startpage if not and fetches all pokemons if it does.
      */
     public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
@@ -30,7 +28,7 @@ export class TrainerPageComponent {
     }
 
     /**
-     * returns a pokemonsservice where it gets pokemon details of caught pokemons
+     * Gets the caught pokemons from pokemonservice to be used as a property in component.
      */
     get caughtPokemons(): PokemonDetails[] {
         return this.pokemonService.caughtPokemons();
