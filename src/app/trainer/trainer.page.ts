@@ -15,6 +15,10 @@ export class TrainerPageComponent {
 
     constructor(private router: Router, private readonly pokemonService: PokemonService) { }
 
+    /**
+     * life cycle
+     * checks if name exists in storage and routes user to startpage if not and fetches all pokemons if it does
+     */
     public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
             this.router.navigate(['/']);
@@ -25,6 +29,9 @@ export class TrainerPageComponent {
         }
     }
 
+    /**
+     * returns a pokemonsservice where it gets pokemon details of caught pokemons
+     */
     get caughtPokemons(): PokemonDetails[] {
         return this.pokemonService.caughtPokemons();
     }

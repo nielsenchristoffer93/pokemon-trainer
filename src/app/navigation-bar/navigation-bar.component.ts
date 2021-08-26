@@ -13,10 +13,17 @@ export class NavigationBarComponent implements OnInit {
 
     trainerName: string = "";
 
+    /**
+     * life cycle
+     * gets trainer from storage & assigns trainerName 
+     */
     ngOnInit(): void {
         this.trainerName = getStorage("trainer-name");
     }
     
+    /**
+     * calls methods to clear states and storage when logging out
+     */
     public onLogoutLinkClick(): void {
         localStorage.clear();
         this.pokemonService.clearStates();

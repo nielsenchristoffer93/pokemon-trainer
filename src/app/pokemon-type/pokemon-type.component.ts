@@ -10,6 +10,11 @@ export class PokemonTypeComponent {
     @Input("pokemon_type_string")
     pokemonTypeString: string = "";
 
+    /**
+     * Method to change pokemon type icons
+     * @param type of the specific icon
+     * @returns type of icon (css code)
+     */
     public changeIcon(type: string) {
         switch (type.toLowerCase()) {
             case "grass":

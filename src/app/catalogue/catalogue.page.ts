@@ -14,6 +14,10 @@ export class CataloguePageComponent implements OnInit {
 
     constructor(private router: Router, private readonly pokemonService: PokemonService) { }
 
+    /**
+     * life cycle
+     *  checks if storage has a trainer name and fetches all pokemons
+     */
     public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
             this.router.navigate(['/']);
@@ -22,6 +26,9 @@ export class CataloguePageComponent implements OnInit {
         this.pokemonService.fetchAllPokemons();
     }
 
+    /**
+     * returns array with details of pokemons 
+     */
     get pokemons(): PokemonDetails[] {
         return this.pokemonService.pokemons();
     }
