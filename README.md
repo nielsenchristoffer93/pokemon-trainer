@@ -12,10 +12,6 @@ https://github.com/PokeAPI/sprites
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
-## Database API 
-
-DB API used is from https://pokeapi.co/api/v2/
-
 ## Startup 🌟
 
 You will first be displayed with a start-page. On this page you will need to supply a name (minimum 2 characters).
