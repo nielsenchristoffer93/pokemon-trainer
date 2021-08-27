@@ -13,7 +13,7 @@ DB API used is from https://pokeapi.co/api/v2/
 ## Startup 🌟
 
 You will first be displayed with a start-page. On this page you will need to supply a name (minimum 2 characters).
-Otherwise you won't be able to reach the translation and profile page.
+Otherwise you won't be able to reach the trainer and catalogue page.
 
 ## Catalogue page 📃
 
