@@ -15,8 +15,8 @@ export class CataloguePageComponent implements OnInit {
     constructor(private router: Router, private readonly pokemonService: PokemonService) { }
 
     /**
-     * life cycle
-     * checks if storage has a trainer name, if it doesn't redirect to startpage. Fetches all pokemons from API.
+     * Lifecycle hook.
+     * Checks if storage has a trainer name, if it doesn't redirect to startpage. Fetches all pokemons from API.
      */
     public ngOnInit(): void {
         if (!getStorage("trainer-name")) {
@@ -27,7 +27,7 @@ export class CataloguePageComponent implements OnInit {
     }
 
     /**
-     * Gets the pokemons from pokemonservice to be used as a property in component.
+     * Get the pokemons from pokemonservice to be used as a property in this component.
      */
     get pokemons(): PokemonDetails[] {
         return this.pokemonService.pokemons();

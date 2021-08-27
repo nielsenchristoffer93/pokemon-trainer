@@ -14,7 +14,7 @@ export class PokemonTypeComponent {
     /**
      * Method to change pokemon type icons based on pokemon type.
      * @param type String of the specific font-awesome icon.
-     * @returns Type of icon (css code)
+     * @returns String, Type of icon (css class)
      */
     public changeIcon(type: string) {
         switch (type.toLowerCase()) {

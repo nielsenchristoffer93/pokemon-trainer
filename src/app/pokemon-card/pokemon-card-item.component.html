@@ -1,7 +1,11 @@
+<!-- Adds custom css class based on pokemon type. eg. water-type add class .water to css.
+    Calls the catchPokemon method for catching the specific pokemon.
+-->
 <div
   class="custom-card {{ pokemon!.types[0].type.name }}"
   (click)="catchPokemon()"
 >
+    <!-- Displays a pokeball in upper-right corner if pokemon has been caught. -->
   <div class="pokeball-container" *ngIf="hasBeenCaught">
     <img
       class="pokeball-img"
@@ -10,8 +14,10 @@
     />
   </div>
   <div class="row justify-content-center pokemon-id">
+      <!-- Displays the formatted pokemon id. -->
     <h5>{{ convertPokemonId(pokemon!.id) }}</h5>
   </div>
+  <!-- Displays the image based on pokemon id. -->
   <div class="pokemon-image">
     <img
       src="assets/sprites/{{ pokemon!.id }}.png"
@@ -20,9 +26,11 @@
   </div>
   <div class="custom-card-body">
     <div class="row">
+    <!-- Displays the pokemons name with a capitalized first letter. -->
       <h3>{{ capitalizeFirstLetter(pokemon!.name) }}</h3>
     </div>
     <div class="row justify-content-center">
+    <!-- Creates pokemon-type components based on how many types the pokemon has. -->
       <app-pokemon-type
         class="col-5"
         *ngFor="let type of pokemon!.types"
@@ -34,6 +42,7 @@
         <p>Height:</p>
       </div>
       <div class="col-4">
+          <!-- Displays pokemons height, since they are listed in dm from the API we convert to meters. -->
         <p>{{ pokemon!.height / 10 }} m</p>
       </div>
     </div>
@@ -42,6 +51,7 @@
         <p>Weight:</p>
       </div>
       <div class="col-4">
+          <!-- Displays pokemons weight, since they are listed in hg from the API we convert to kg. -->
         <p>{{ pokemon!.weight / 10 }} kg</p>
       </div>
     </div>

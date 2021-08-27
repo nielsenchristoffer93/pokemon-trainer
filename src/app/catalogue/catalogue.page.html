@@ -1,6 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
   <div class="row">
+    <!-- Loop through array of pokemons and create cards for each pokemon -->
     <div class="col-3 margin-bottom" *ngFor="let pokemon of pokemons">
       <app-pokemon-card-item [pokemon]="pokemon"></app-pokemon-card-item>
     </div>

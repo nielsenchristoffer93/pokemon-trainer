@@ -2,9 +2,11 @@
   <div class="container">
     <a class="navbar-text" routerLink="/">Pokemon Trainer</a>
     <div class="navbar-right">
+      <!-- Displays the trainer name from localStorage as a link in navbar. -->
       <a class="trainer-link navbar-text" routerLink="/trainer"
         >Trainer: {{ trainerName }}</a
       >
+      <!-- Logout icon, calls the logout method on click.  -->
       <a
         class="trainer-link-logout navbar-text"
         routerLink="/"

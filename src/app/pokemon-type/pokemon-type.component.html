@@ -1,4 +1,6 @@
+<!-- Adds custom css class based on pokemon type. eg. water-type add class .water to css. -->
 <div class="type {{ pokemonTypeString.toLowerCase() }}">
+  <!-- Changes the css class for displaying different icons, based on type -->
   <i class="{{ changeIcon(pokemonTypeString) }}"></i>
   <p>{{ pokemonTypeString }}</p>
 </div>

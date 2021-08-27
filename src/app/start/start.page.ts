@@ -15,7 +15,7 @@ export class StartPageComponent implements OnInit {
 
     /**
      * Lifecycle hook.
-     * Checks if trainername exists in storage and routes page to catalogue.
+     * Checks if trainername exists in storage, if it does route page to catalogue.
      */
     public ngOnInit(): void {
         if (getStorage("trainer-name")) {

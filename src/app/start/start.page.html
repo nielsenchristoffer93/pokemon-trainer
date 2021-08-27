@@ -8,6 +8,8 @@
       <div class="row">
         <h1 class="pokemon-font">Trainer</h1>
       </div>
+      <!-- Angular form for validating data from form.
+      The button is disabled until valid form. -->
       <form
         #createForm="ngForm"
         (ngSubmit)="onSubmit(createForm, trainerName.value)"
