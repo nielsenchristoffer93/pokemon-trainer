@@ -16,17 +16,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You will first be displayed with a start-page. On this page you will need to supply a name (minimum 2 characters).
 Otherwise you won't be able to reach the trainer and catalogue page.
-<p>&nsps;</p>
+<p>&nbsp;</p>
 
 ## Catalogue page 📃
 
 After loggin in, user will be redirected to the Catalogue page where all pokemons are listed with their attribute details. User is able to add 1 or more pokemons to their trainer profile by clicking on the wanted pokemon card.
-<p>&nsps;</p>
+<p>&nbsp;</p>
 
 ## Trainer page 🙋‍♂️
 
 In the trainer page, all caught pokemons are listed, user is also able to remove a pokemon from their profile by clicking on the selected card.
-<p>&nsps;</p>
+<p>&nbsp;</p>
 
 ## Development server
 
